@@ -2,4 +2,4 @@
 
 Hey - thanks for stopping by!
 
-Check us out on csv_validator.herokuapp.com
+Check us out on csv-validator.herokuapp.com
