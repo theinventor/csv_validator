@@ -1,0 +1,27 @@
+<h1>Here you go!</h1>
+<p>(We don't store this, it's in a tempfile until the app restarts, and then it's purged.)</p>
+
+<% if @result %>
+    <table class='table responsive striped'>
+      <thead>
+      <tr>
+        <% @result[0].each do |column| %>
+            <th><%= column %></th>
+        <% end %>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <% @result[1..15].each do |row| %>
+            <% row.each do |column| %>
+                <td><%= column %></td>
+            <% end %>
+        <% end %>
+      </tr>
+      </tbody>
+    </table>
+<% else %>
+   <h2>Woops! We had an error reading that file!</h2>
+    <h4>Error:</h4>
+    <p><%= @error %></p>
+<% end %>
