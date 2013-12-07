@@ -11,17 +11,17 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <% @result[1..15].each do |row| %>
+      <% @result[1..15].each do |row| %>
+          <tr>
             <% row.each do |column| %>
                 <td><%= column %></td>
             <% end %>
-        <% end %>
-      </tr>
+          </tr>
+      <% end %>
       </tbody>
     </table>
 <% else %>
-   <h2>Woops! We had an error reading that file!</h2>
+    <h2>Woops! We had an error reading that file!</h2>
     <h4>Error:</h4>
     <p><%= @error %></p>
 <% end %>
