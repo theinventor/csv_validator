@@ -1,12 +1,12 @@
 <h1>Here you go!</h1>
 <p>(We don't store this, it's in a tempfile until the app restarts, and then it's purged.)</p>
-
+<p>A red box in the header means something was wrong there, maybe extra whitespace or other formatting issue.</p>
 <% if @result %>
     <table class='table responsive striped'>
       <thead>
       <tr>
         <% @result[0].each do |column| %>
-            <th><%= column %></th>
+            <th><%= column.gsub(" ","<span class='error'> </span>").html_safe %></th>
         <% end %>
       </tr>
       </thead>
