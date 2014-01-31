@@ -14,7 +14,7 @@ class CsvFilesController < ApplicationController
     require 'csv'
     file = params[:csv_file][:file]
     @result = []
-    CSV.foreach(file.tempfile.path) do |row|
+    CSV.foreach(file.tempfile.path, encoding: "iso-8859-1") do |row|
       @result << row
     end
   rescue => ex
